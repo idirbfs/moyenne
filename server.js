@@ -1,21 +1,19 @@
+const express = require("express");
+const app = express();
+
 //var d'envirenement
 const dotenv = require("dotenv");
 dotenv.config();
 
-const express = require("express");
-const app = express();
-const path = require("path");
-
-//view engine
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "hbs");
-
 //db config
-const connectDB = require("./config/db");
-connectDB();
+require("./config/db")();
 
-app.use("/", require("./routes/index"));
+//config middleware
+app.use(express.json());
+
+//routes
+app.use("/unitee", require("./routes/unitee"));
 
 app.listen(process.env.PORT, () =>
-  console.log(`app running op PORT ${process.env.PORT}`)
+  console.log(`app running on port: ${process.env.PORT}`)
 );

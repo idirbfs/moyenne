@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Bloc = require("../models/Bloc");
 const Unitee = require("../models/Unitee");
 
-router.get("/relevee", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const blocs = await Bloc.find({}).populate("unitees");
     res.send(blocs);

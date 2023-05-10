@@ -1,0 +1,19 @@
+@startjson data
+{
+    "bloc":{
+        "id": "ObjectId",
+        "nom": "String",
+        "credits": "Number",
+        "creditsCumulees": "Number",
+        "note": "Number",
+        "unitees": [{
+            "id": "ObjectId",
+            "nom": "String",
+            "credits": "Number",
+            "creditsCumulees": "Number",
+            "note": "Number"
+        }]
+
+    }
+}
+@endjson
